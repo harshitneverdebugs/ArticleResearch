@@ -10,7 +10,7 @@ from langchain.document_loaders import UnstructuredURLLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 
-api_key = "AIzaSyB4of1ptYC3S1lA6oTyiw1lklWqi-Og44Y"
+api_key = "YOUR_API_KEY_HERE"
 genai.configure(api_key=api_key)
 
 st.title("RockyBot: News Research Tool 📊")
