@@ -36,7 +36,7 @@ if process_url_clicked:
         separators=['\n\n', '\n', '.', ','],
         chunk_size=1000
     )
-    main_placeholder.text("Text Splitting...Started...")
+    main_placeholder.text("Text Splitting...Started...✅✅✅")
     docs = text_splitter.split_documents(data)
 
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
@@ -45,7 +45,7 @@ if process_url_clicked:
     time.sleep(2)
 
     vectorindex_genai.save_local(index_folder)
-    main_placeholder.text("Index Saved Locally at 'faiss_index_folder'✅✅✅")
+    main_placeholder.text("Index Saved Locally at 'faiss_index_folder'")
 
 query = main_placeholder.text_input("Question: ")
 if query:
