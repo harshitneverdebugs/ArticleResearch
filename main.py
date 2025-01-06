@@ -13,7 +13,7 @@ from langchain_community.vectorstores.faiss import FAISS
 api_key = "YOUR_API_KEY_HERE"
 genai.configure(api_key=api_key)
 
-st.title("RockyBot: News Research Tool 📊")
+st.title("Article Research Tool 📊")
 st.sidebar.title("News Article URLs")
 
 urls = []
@@ -29,7 +29,7 @@ llm = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.9, max_tokens
 
 if process_url_clicked:
     loader = UnstructuredURLLoader(urls=urls)
-    main_placeholder.text("Data Loading...Started...")
+    main_placeholder.text("Data Loading...Started...✅✅✅")
     data = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
@@ -41,11 +41,11 @@ if process_url_clicked:
 
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
     vectorindex_genai = FAISS.from_documents(docs, embeddings)
-    main_placeholder.text("Embedding Vector Building...")
+    main_placeholder.text("Embedding Vector Building...✅✅✅")
     time.sleep(2)
 
     vectorindex_genai.save_local(index_folder)
-    main_placeholder.text("Index Saved Locally at 'faiss_index_folder'.\u2705\u2705\u2705")
+    main_placeholder.text("Index Saved Locally at 'faiss_index_folder'✅✅✅")
 
 query = main_placeholder.text_input("Question: ")
 if query:
